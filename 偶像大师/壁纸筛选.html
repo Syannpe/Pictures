@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style>
+        img {
+            float:left;
+            margin:30px;
+        }
+        #pic{
+            border:red solid 1px;
+
+        }
+        #del{
+            border:blue solid 1px;
+
+        }
+    </style>
+</head>
+<body>
+<div id="pic">
+
+</div>
+<div id="del"></div>
+<script type="text/javascript">
+    document.addEventListener("DOMContentLoaded",function (){
+        const pic = this.getElementById("pic");
+        const del = this.getElementById("del");
+        const fileName = "000ef7ca56c06b69a5c69da607afe51fbfb17a1d_raw.jpg\n" +
+            "01888703769466bb1d4560eb82b0c97261d91bab_raw.jpg\n" +
+            "0253e4efdf600a72968645662d41d66c7d10aa92_raw.jpg\n" +
+            "02c33defa0bb287942f55f038feae2a55189770d_raw.jpg\n" +
+            "02c3a8faccff3eaa14dbbca656e86727216003d0_raw.jpg\n" +
+            "038d1d36bf00050dd2bc53f81b1ee690b7c7c43c_raw.jpg\n" +
+            "03f630e6e840c7245501b02f92b739c3065fbd26_raw.jpg\n" +
+            "05c60f7741119d5b977afc755226ad2de7b44c99_raw.jpg\n" +
+            "05cd3cd53194026f9a63fac39a1938a21b52e4dd_raw.jpg\n" +
+            "060eda8f85aeea3e3af57a5eb9cacab0ae9a8961_raw.jpg\n" +
+            "064deda4bd7920fe695e70dd4606989c916c6bf6_raw.jpg\n" +
+            "089df7fe97832744aab284b8716078cb91ba70f8_raw.jpg\n" +
+            "08eefefd21f7ca9b18f4629cf8f53b09908409bf_raw.jpg\n" +
+            "0960d50d0ae948aa7d358a0c78e1a47ef6f3536d_raw.jpg\n" +
+            "0b47071a0860049cbefeb4cf6b6cac01987f1fac_raw.jpg\n" +
+            "0b71260f17aa18e87cba4516dff2e50b743ca70c_raw.jpg\n" +
+            "0c44b48676267cd19c7444fca0853126df450e4a_raw.jpg\n" +
+            "0d135b087706bc54642fd62a6be5fdc44a722473_raw.jpg\n" +
+            "0f004b27b4ce710bc2c4f9a13ac6c8b090167b2a_raw.jpg\n" +
+            "0f253cb1cdec68b1a2e1f195fb36a35335a8e695_raw.jpg\n" +
+            "0f4d07a590d49c547a377a9180a6bce7a0edd880_raw.jpg\n" +
+            "107fcaedd06ef87511517025dbbd6500d5a752b3_raw.jpg\n" +
+            "10b1c2e077314e0dcc33be694256eadf94aab4ad_raw.jpg\n" +
+            "1366750ea53b58b6870f0ca2fc5c792b6b75a4f9_raw.jpg\n" +
+            "137cb04ced8200139ac20cbd006adedf1e3d64da_raw.jpg\n" +
+            "138605dac9c38e0b644857acc2d79bddcba38452_raw.jpg\n" +
+            "145c4a064e0c4b0cdb6362b3de771b1b5817f2f8_raw.jpg\n" +
+            "155f60370b8340a440b335468683b45963d48b6e_raw.jpg\n" +
+            "16a2a0d5f003609c57c77cf673fca30f68ff4027_raw.jpg\n" +
+            "1792d0933ab28ff3807f6d06ba61a997a54b68a8_raw.jpg\n" +
+            "183c2495e77006e4cb5eac607a42c7d405916c69_raw.jpg\n" +
+            "18776f5f94a71c21f9411ba57c72788c756f3e0a_raw.jpg\n" +
+            "187814a3192192077cc27de9407e066c2fd34881_raw.jpg\n" +
+            "187ce8d2e7fc993bf12d9ad6cde3330d2b303983_raw.jpg\n" +
+            "19d495688291ad0aa1b976da06964813b1dbb72e_raw.jpg\n" +
+            "1a2cbee7cea88a59e58898c4c15a8a3d07d5edc1_raw.jpg\n" +
+            "1dc751db7e84bbeaa2d765517d8ffcb9412bed92_raw.jpg\n" +
+            "1e36ba2fdf473379477b20793babfca1583087f8_raw.jpg\n" +
+            "1e504e207e0ccfe0127d54bb0a6c8ea90af8e936_raw.jpg\n" +
+            "1efac95820bee1e84a7459da603368600270c848_raw.jpg\n" +
+            "1f6913dca347361caf2a4e130311597b117738c0_raw.jpg\n" +
+            "1f85c22c67f26bcfa8a11232daecca65d68acc90_raw.jpg\n" +
+            "1fb29f17dd38042bac818a220fe7497d3031b775_raw.jpg\n" +
+            "2023847d35f90aacfa07ce1dfe7f8ab5a976654b_raw.jpg\n" +
+            "203b083e04d21ae9f90594e0ea303eff9018792e_raw.jpg\n" +
+            "20a1806c4301331c1ae3ecfd9c7bb49ab1a5eab8_raw.jpg\n" +
+            "213add63a6c0acb72f351f35a9941d5cafae5cea_raw.jpg\n" +
+            "2171e139e5f7d61728e478c1431a77ea192481db_raw.jpg\n" +
+            "23b4b5b9ea64057c8152db1570c4c3cd9fedb5f5_raw.jpg\n" +
+            "2433d34697e9c2b497390a7cd8c6eb56b0592378_raw.jpg\n" +
+            "243c585e738dfeb717f8be44af9d954de0e7cbb2_raw.jpg\n" +
+            "246572a31bc28605a5beb7bf27e976db2e91c9ed_raw.jpg\n" +
+            "2487f591fd285e2e416667579189534d5438db99_raw.jpg\n" +
+            "2555aa5a939693c0f16b21997ccdce34ce3ef7bc_raw.jpg\n" +
+            "25eb71e7419fd23fb7e793f4eda1092858f208cb_raw.jpg\n" +
+            "260043a61245bcad93f1957c4414b2d5fc28ebf5_raw.jpg\n" +
+            "2606736398c1203e9d6911adb6af12f9011e7953_raw.jpg\n" +
+            "270beb0907685bb939a73febd4350668ae2a50ea_raw.jpg\n" +
+            "2723b8914d79d4210a9fc3f18cb3bfd4a9765df6.jpg\n" +
+            "2ac4678f14b397ec21e82b4c6e69f5aa5e61fe18_raw.jpg\n" +
+            "2bcce0e150e7ab83d09776dcc57fef6234bc7ddc_raw.jpg\n" +
+            "2c35fc7c9fd477172144d840936d2f69cbe69df9_raw.jpg\n" +
+            "2c44c54ac21e32915b202cec845f68f7b9f1def2_raw.jpg\n" +
+            "2c97d21c931e97b64af6f6a4d0629d05fbb4acd6_raw.jpg\n" +
+            "2d0b9dec6f11185924d2ee70c4658c40d5e6a0ee_raw.jpg\n" +
+            "2f12271634a5dd8fe927112eb64c86814e530c14.jpg\n" +
+            "30d841dcd62427b3dfcd203cffcc8c38df51f786_raw.jpg\n" +
+            "311e58a768258ff3b9e9d15e8db52e94a9698ddf_raw.jpg\n" +
+            "31402d519d2896fd3757d4ad6a63c9d8fab60a59_raw.jpg\n" +
+            "31989c6b92541772e6327a0940d874a1d5303aa0_raw.jpg\n" +
+            "32971e2b656aa7ec5f5144b9b48f877582a33efd_raw.jpg\n" +
+            "32a938e43734d971c8752ab3521c3e578f305717_raw.jpg\n" +
+            "32df1d5c7f6a786a68b74ec8360a3786c2f7baaf_raw.jpg\n" +
+            "346126ec36e37293a0d047890f02f2817bda9707_raw.jpg\n" +
+            "35ac532a974099c55d8288424b4dd805a2fe632d_raw.jpg\n" +
+            "362e258be02cebf49c492d313e31243556796dda_raw.jpg\n" +
+            "36fc976967ff6137398a641c41bb356783e45194_raw.jpg\n" +
+            "37c78520d8af18f34f824a75605801d4ef1d18d7_raw.jpg\n" +
+            "37ec515f5ec9af32a1d4bf77bc433ca5a97aa1de_raw.jpg\n" +
+            "3837485686e61e278af89bd4059d21f1a653168c_raw.jpg\n" +
+            "3b819a9040cc95e6f4919c4f5b1b4b4041675ae4_raw.jpg\n" +
+            "3c572ee3c722ba2e4196910c31f60235a0534ca5_raw.jpg\n" +
+            "3d468e2fc361296d26cc2543078728581b944cff_raw.jpg\n" +
+            "3d470d781eef41093967812ce1665d82ac2c0615.jpg\n" +
+            "3e289df674365a30128d268c236b8beab8a4ca7b_raw.jpg\n" +
+            "3eaa593d379d628e54d7353ade0ec25540fe3fb0_raw.jpg\n" +
+            "3f8620a1dde23f4fb291b7c9504cf25d5635f974_raw.jpg\n" +
+            "3f99381f251189ccae3c6e210aa5919c369a42ec_raw.jpg\n" +
+            "3ffba887cca6abecfd26b486bff150b673a4b27f_raw.jpg\n" +
+            "402202a91dee5696844e30fabd903f7338deb004_raw.jpg\n" +
+            "40a61ed49ed73912051fec5c2aabbae9f88a3ba4_raw.jpg\n" +
+            "41e5fde7eac8a464126ee68ba7d45747746287ef_raw.jpg\n" +
+            "4318998109547ebc04d59be36d82465d975d99a6_raw.jpg\n" +
+            "431ca0bba94d77a307e994ae629db8ad6d160710_raw.jpg\n" +
+            "4385b1f5b90fa4de76987eb374159ee9ae7244c9_raw.jpg\n" +
+            "441f814da330317c37fae878f372d770c81eae90_raw.jpg\n" +
+            "44550cc1397ddc87c9959b90f328da0fee19aee4_raw.jpg\n" +
+            "4479ae04f5484fa11f3cd4c36888fb1b47c19069_raw.jpg\n" +
+            "450d0ff6625b9884188ff3f38e017b6abbe96f96_raw.jpg\n" +
+            "456db05dee24f8cf569c35ea15d787422e8e445b_raw.jpg\n" +
+            "470510bab35311c0f21b1609f7de69ef5fb9d29d_raw.jpg\n" +
+            "485bdd70bb52334818e5370e149cbd82b6ff548a_raw.jpg\n" +
+            "48cef306f08c346f7297b928d4cad9c6c4979d94_raw.jpg\n" +
+            "4bbe523f0dc2b8847dbe15a4f80d4f0de774e86a_raw.jpg\n" +
+            "4dc93f9af2732bbbbc44b2caa2a2c10c7f7fd814_raw.jpg\n" +
+            "4ddc1c77d73e4d097cbf8e6d3349b95b1853b801_raw.jpg\n" +
+            "4e9343e0cdc3d03d9a0bfe397eb24424dfa6a3de_raw.jpg\n" +
+            "4eb4fb302325dee45d4eebe91b821649a9f2e88a_raw.jpg\n" +
+            "4ebb8d1a0357e95f8dd8cd05a3260198874f2aac_raw.jpg\n" +
+            "507b59d0d1b966add8606d9480c3c05077ea1cc1_raw.jpg\n" +
+            "5086aad308883f514889cdf1bdecb8d0cae590be_raw.jpg\n" +
+            "50b1f89e547ac405bb9676fa7d93985f32ced175_raw.jpg\n" +
+            "512d5be4c1da8666f4e073a0846339c43f4405ee_raw.jpg\n" +
+            "51a5e4ffb6251d61d7eaab3a416e6fac0e17da2b_raw.jpg\n" +
+            "51ec777cd68aa6b29def85365b97bfedc892bd19.jpg\n" +
+            "52037344bb744cffa9d8f0acea2065b6cf531f51_raw.jpg\n" +
+            "52b73995853722baf847116ecc063e1af665fff4_raw.jpg\n" +
+            "52edc8aff22f1df81537c8c636c025d56b623f62_raw.jpg\n" +
+            "539018593f329a0242b8909df57c2178d6f38d6a_raw.jpg\n" +
+            "54232c0b48cb70ac4a182281a172395bbe67d46c_raw.jpg\n" +
+            "5460f71a1f5501f049d1c9975deb6c4bf0df54a4_raw.jpg\n" +
+            "5598e8508242671fc5f78f1593a9235587f6f312_raw.jpg\n" +
+            "5604230fef2e22073e6d24e115a28d100e59c510_raw.jpg\n" +
+            "572a0bb9dacc6deb13b8a47817583a550051c58d_raw.jpg\n" +
+            "5776d9a3e782949132846b804c422f8b4a99b366_raw.jpg\n" +
+            "5808f557838c3bcd025ac3088c5b8a2b602cee64_raw.jpg\n" +
+            "596223e68ce0a71122a6e93300127a565ed33cd6_raw.jpg\n" +
+            "5c70da44050e3afc29160e2ef51364f4e3e5381c_raw.jpg\n" +
+            "5d2f77f3e726e62b8ebcb4683e9b64eedcbea431_raw.jpg\n" +
+            "5d378bbacf5f4211f5c89d1734ff51f641fdccab_raw.jpg\n" +
+            "5d7607c9bd3aa96cee7994211443918422c4a390_raw.jpg\n" +
+            "5dd294940d1d5aa55e4b401dc9aeeaf21dd7a1e5_raw.jpg\n" +
+            "5e588793e13964123bf9eb3045932b0dc49410ad_raw.jpg\n" +
+            "5f89d129198d6a244f5817046eaa68d35881ccca_raw.jpg\n" +
+            "6089180c6e408e3f2d91fbb394b0058ad3e31c84_raw.jpg\n" +
+            "6282aa4b2e8ed34ce67f332d49c1afa2348584cb_raw.jpg\n" +
+            "633c60fec39560da2325763f576cd50a88ee9dcf_raw.jpg\n" +
+            "636ffbb6dfe019139f006f9e0047e4d17a6c61ff_raw.jpg\n" +
+            "6373ef28b387eb5bff08cb739f21ca06a23a4b9f.jpg\n" +
+            "6613fa73e566286000fe8e4fc5fcbb14047a6704_raw.jpg\n" +
+            "68916c2d72b83396ef98ed7e3bf1313f83357489_raw.jpg\n" +
+            "68b29c89a40f384e473869c919be8db19ee71ac9_raw.jpg\n" +
+            "68eb657573067d8c7f8b0efc4b2ab62383555cd7.jpg\n" +
+            "6918d7d47d1a111f576509143bcbf307dcdccff9_raw.jpg\n" +
+            "692d108554e406e4523b4b6aecca078fd1ea9ea9_raw.jpg\n" +
+            "6ac709e1d4597318cfcea65c247b9f64112c0967_raw.jpg\n" +
+            "6b4be6b1a4d92dbc4d85e9db52c003139164f5c8.jpg\n" +
+            "6bad367976e82f9de249f18742e6dba6bb45c9be_raw.jpg\n" +
+            "6c56a31d51cad2331132019b662c08866f36700a_raw.jpg\n" +
+            "6cb3afa909e12b59ec5233f047fd29cb0643a580_raw.jpg\n" +
+            "6e6624af6b49bd90d5c9f958dc0a5d793f3a5782_raw.jpg\n" +
+            "6ed35bcfc40d3c2779ea6dd90dbac629c28968d4_raw.jpg\n" +
+            "6f16fa1ffcbc238b7a7dbfcf855091bbb9574176_raw.jpg\n" +
+            "70f4d39c910b53b63b75f5227beb95174a6b8b9f_raw.jpg\n" +
+            "738ee77fefc42bb5faed1a81551220983ae86d4e_raw.jpg\n" +
+            "74b307463f0dbbe786116324fce47017cfe733a1_raw.jpg\n" +
+            "74eb38da594ce3931d172d53b96bf1bbc4e55e3e_raw.jpg\n" +
+            "75e8b4b7cae3c91d351eb541bd2e207fae74a3c6_raw.jpg\n" +
+            "783322ebff9124f3c9dfd6ebc655aea0386cd4a8_raw.jpg\n" +
+            "799a3d81c162d0a53017b9595f4a9796e2b5fd2a_raw.jpg\n" +
+            "7aa413685a74653b6fa324306081ed50fed5ae8b_raw.jpg\n" +
+            "7b721e18300c52b074100d7496a75ad924f0e456_raw (2).jpg\n" +
+            "7b721e18300c52b074100d7496a75ad924f0e456_raw.jpg\n" +
+            "7c07f6c198594e46254a6e6f500026f285b759ba_raw.jpg\n" +
+            "7c44ad9998f62ba1d79c9cf143aa195ce50332b7_raw.jpg\n" +
+            "7d58984eaf11ff777aa029c64c039bef8dff39f4_raw.jpg\n" +
+            "7e97e9f375636e13650d0a026ea10b65e23d7e42_raw.jpg\n" +
+            "7f3268d67c2327cbd5c84198649c0845527cb11c_raw.jpg\n" +
+            "7f4f53b2e378de9537b5f2abaa81d8e81a69f8c5_raw.jpg\n" +
+            "7fb4fb70d07d400ec2a8a8d3aef2cbc33221dc83_raw.jpg\n" +
+            "8128f7cc22c7225b50c88718619bb6b498882166_raw.jpg\n" +
+            "81458d5199bf7e1e327e69afe65bd9d12c95f6f1_raw.jpg\n" +
+            "8155cd5db3cf688aaaa8cc29532b8eba32f153e4_raw.jpg\n" +
+            "82498b2fe6a9654457b214ada970de92a646f5e6_raw.jpg\n" +
+            "82bb7cc6c5e5e04ce89cc99e05ee4fa20ff79e90_raw.jpg\n" +
+            "82e1126f2f8b75549d6d2f394195c591c93980ec_raw.jpg\n" +
+            "8378f2d033c0308382969bb0f16beeb414de0dc4_raw.jpg\n" +
+            "83f0865a089bfd64731e2cc445d5e9c74025cfde_raw.jpg\n" +
+            "851eb1cbecdb27f37f59678604be2a2845f9d4d2_raw.jpg\n" +
+            "859e629791485d4024eedf025e2acba3b6628e4a_raw.jpg\n" +
+            "85c06bc87ce71c64da0814addbfef8e741e7bac8_raw.jpg\n" +
+            "85c4d3ef3f08dcde99abb7b64b619531dedb6452_raw.jpg\n" +
+            "85e228029156dc9433f53bcf1cb8695884f3cf70_raw.jpg\n" +
+            "869acc294baa4c7c8e8ef3397127a1c0f6bbbcc0_raw.jpg\n" +
+            "8801c274a7483488dd3828a0274e4e26babeb6c2_raw.jpg\n" +
+            "891c275bd82d99cb6ede6229ffb809d77de01581_raw.jpg\n" +
+            "8a8598fcea261016563ba2385ba95694a8b6556b_raw.jpg\n" +
+            "8b5dedca4984e4c6636427b465bc7825f26b1214_raw.jpg\n" +
+            "8ba059b54bde38c3cb30290add0a6635edd2fbb7_raw.jpg\n" +
+            "8c0bb1a0b7f0aa6f4684afd1e60e56f69e4f7ac7_raw.jpg\n" +
+            "8c94f9f99b6b5d1befba8a60e6d812f41e0e2cca_raw.jpg\n" +
+            "8d00c152b70fa8d4b470a964b9a7909d7c3aefac_raw.jpg\n" +
+            "8d4f6c609a1b9e53dda11e5df694a38758b51ae5_raw.jpg\n" +
+            "8f6da58c55f301ee067e5f0db2dafc037c69f76f_raw.jpg\n" +
+            "902b53f61655f1af4a14e0c11837403e5feb4a5f_raw.jpg\n" +
+            "904c6b9fc9d9f4b7e9187e55c8598bd0e0c79bdb_raw.jpg\n" +
+            "90765573c22d5691b3dfcb54bdfb6bb86bc14291_raw.jpg\n" +
+            "90f4ea630659d35b2cd9e4f74a995cc152333338.jpg\n" +
+            "92ffd080dc50dee40fc825d9b86684019ba59090_raw.jpg\n" +
+            "937fed8033fffc568826942965b650c9174a4d1c_raw.jpg\n" +
+            "938dfc2d020f51442d67428caf73df7f7be5681d_raw.jpg\n" +
+            "939e45155497094942a4e90c929662cca0254620_raw.jpg\n" +
+            "941d8633a331950d4dd608d8aae9d460ac884411_raw.jpg\n" +
+            "942298d3e0ca60a0d6100297708b41408f807065_raw.jpg\n" +
+            "94d87e3faa52fa950d06aee7a0f6f01125e3b7a9_raw.jpg\n" +
+            "965546ec1b5443f896e703537562a21fedb0b2b7_raw.jpg\n" +
+            "97838c21eb2783095124eb5b694ae0fc0f1d71b1_raw.jpg\n" +
+            "98a32887f7daed9998cbcb2f94834329e5563d3c_raw.jpg\n" +
+            "9ac08f4939f4f3f8c9ccba429402e0325bd37735_raw.jpg\n" +
+            "9c7a3f0342211a20b2591bc731e135320291a635_raw.jpg\n" +
+            "9deecb62c5233f643b343cf5d3c5fc470a0ee8be_raw.jpg\n" +
+            "9e232ed764ce6c938233a95fd20c86d9199683cd_raw.jpg\n" +
+            "9e9da8c749abb9f82f963f993c89f0b34204086e_raw.jpg\n" +
+            "9ef34f3830ac93613e5c959660879c5e75074216.jpg\n" +
+            "a025403d4901e48b03af13135e5a6c1f24b2dcd4_raw.jpg\n" +
+            "a0a797232ca4f30dd126b710493ddfbd50188ee4_raw.jpg\n" +
+            "a231cb1d6f99b37956322a541ff92562509fe175_raw.jpg\n" +
+            "a24467a5374a5d07d2f39398e01777dc611d966c_raw.jpg\n" +
+            "a347107e24b79f3a3cd4118b4bd1071a612e9ef4_raw.jpg\n" +
+            "a40a5b23b31ce09c8f131db1028fde5c14759ef8_raw.jpg\n" +
+            "a4bae19031c3a8231fb299015e72dd990e3129d5_raw.jpg\n" +
+            "a5d205f1efde32931b392a124defa6d7cbe60c1c_raw.jpg\n" +
+            "a933ce95c068556e334665963c39fd70fd7cb407_raw.jpg\n" +
+            "aa1bd1933e461df0898d5806bacdace915b0cdce_raw.jpg\n" +
+            "aa74882c907cb6a47545da446f7b60f6cc372dad_raw.jpg\n" +
+            "ace5f3c3889c8c29ed0ea929d5ab9da940cf9406_raw.jpg\n" +
+            "adc020637a7e1156344d84755250be88a8af695f_raw.jpg\n" +
+            "adc575a2414d733c0a3044fc6a8056ce56a95157.jpg\n" +
+            "add5196946c5d80700a3f7bb2cb7f2f922072a8a_raw.jpg\n" +
+            "aed5164acf88c37e352bfece86ced19d884c4896_raw.jpg\n" +
+            "aed790e71643a0d256ff12e5c3284f9038ee335a_raw.jpg\n" +
+            "aeeefa40599cfe12a621f96e6f29e172b2cbe102_raw.jpg\n" +
+            "af6fbbbe0de3a1c3c1b8c31f5ff1d94c69f9a5da_raw.jpg\n" +
+            "b24c413e34328a13b602ec935c19acd84025edaf_raw.jpg\n" +
+            "b25bfe0306a7c08d62a3582c9f2b788e559eaab3_raw.jpg\n" +
+            "b3546ca55a15740a944d75eebf6051048444b003_raw.jpg\n" +
+            "b36ea9af28f93f9690e4e01f8113cefff229055c_raw.jpg\n" +
+            "b3b0ac0e18410804fdc0c0efb2ccbd341337a2bc.jpg\n" +
+            "b4e37ef48bf71dbb4cbf6e209c16f6bd959a06ef_raw.jpg\n" +
+            "b5fcb6c75ca8a07e910bf6e56c09e832e91a9a86_raw.jpg\n" +
+            "b751b5f2ee03072793580b92f03b49e35f1f4f9c_raw.jpg\n" +
+            "b84ac1a008ef914bbb3893b3118e47f6ccc5a07a_raw.jpg\n" +
+            "b8ee44b6b454d8b0386b46428ea1d3dd0fd682f8_raw.jpg\n" +
+            "b8f276a18a308cf483f1ba43f6beaa87b1d14a02_raw.jpg\n" +
+            "bb2fa8dfe5502feaaeea67175bf744d65a4db129_raw.jpg\n" +
+            "bbb51f3956ee2868363d82af640f26b2a6dd4dfc_raw.jpg\n" +
+            "bbff77fe8d933d377231083af000bf661ac69d87_raw.jpg\n" +
+            "bd78a718e1b15007349b9a5794190fb10deb2248_raw.jpg\n" +
+            "bdaa768f9d54cb7ada085ef5e28f5d718fc918f0_raw.jpg\n" +
+            "beb7f7c99e3a2ae73577b30b22e71eda677941b6_raw.jpg\n" +
+            "bebec2ed82d33c3e0a5d2b33e46bedf703c27677_raw.jpg\n" +
+            "c0f706c44dce6785bb4184818a0a739449a736eb_raw.jpg\n" +
+            "c65370e904b1fd2396ff649981195db04cc9168a_raw.jpg\n" +
+            "c70251a0d727cbee3c9b68872566be10bde13c5a_raw.jpg\n" +
+            "c81203db4ce8c36e062df180d937a4d39ac73265_raw.jpg\n" +
+            "c9c9c93cb64c4f61d6bf6ef6aea5a41373cc100b_raw.jpg\n" +
+            "cb035e855e285979c7efb6f1d43c98313a176a95_raw.jpg\n" +
+            "cb3472a844f08a55146fe5ff8869e177079b329f_raw.jpg\n" +
+            "cb648e523fd6c9cde11cf55e0282dbd4cf54ccab.jpg\n" +
+            "cc1e40f03864ad843ff72c47968b47404d22107d_raw.jpg\n" +
+            "cd9fe3d4298a7e2808c47ada1d88432d9fb66eaf_raw.jpg\n" +
+            "d13015dd01e352c249714efd0fd21b8c8510cca6_raw.jpg\n" +
+            "d3484917689b7763e5be3bcfddf18f0bce5f7d0e.jpg\n" +
+            "d5c71623620dc478bf182766c64ad13a491d3f24_raw.jpg\n" +
+            "d7e5d656534f9a2056ac9e1d3e530a5c2b7c4cdd_raw.jpg\n" +
+            "d818eae9a7d760158b3ccf868dab1d5dba21df69_raw.jpg\n" +
+            "d8cb1d15f7efdb23fb397ff0d0e53273ec6895e1_raw.jpg\n" +
+            "d9844d2a25d36faee92ed27351d29cc5c4a5c4da_raw.jpg\n" +
+            "daac205db4acd5d774aeaff8406f9da50ca554df_raw.jpg\n" +
+            "dbc276b4578ac24bed9df2f6e7f845cf68ef9cb8_raw.jpg\n" +
+            "dd7d52d211ff936944e9ac4b1fe4a43639422cd0_raw.jpg\n" +
+            "dd9f79bd972158d9d14dde7216c4b80e433ae631_raw.jpg\n" +
+            "ddf9c160f2b8a7f3ab365166a2afd2b015a0f573_raw.jpg\n" +
+            "df5aa59c4df58ca29e9342ea5c8fab82eaa4b700_raw.jpg\n" +
+            "e1ae739d4584eae67d36839dc3d919a35a53c164_raw.jpg\n" +
+            "e24720508876f42103c71a41967b7834496b03ed_raw.jpg\n" +
+            "e265de642b903689126cf4c8110750efa3cc0f30_raw.jpg\n" +
+            "e2f351d4338ad7be3fd4ba76646e5da25a776954_raw.jpg\n" +
+            "e41dd7532aad556a593bc15816f5bfdb44ea0f50_raw.jpg\n" +
+            "e526c2805529cb094859579282d7c0b4fdeea6b0_raw.jpg\n" +
+            "e542f809666c1a6f9928eeae7faa25f6e1315562_raw.jpg\n" +
+            "e59fb1418569f4e5d4654c47801bae0b803b8671_raw.jpg\n" +
+            "e6cd4db3f50c7cfe356ba66d0b692250bc28e5e1_raw.jpg\n" +
+            "e74e632ea657bce9d3abc761a8c4fb16c3053bd8_raw.jpg\n" +
+            "e7b178c2460fa6ebcf0b9d7d5be880bebb4efe20_raw.jpg\n" +
+            "e8c647d793a95d56834309dad9b9cef9116c4aee_raw.jpg\n" +
+            "ea2390a8d11bcad51cf6bba75a14fcfc965942e2_raw.jpg\n" +
+            "ee065512e4f53fed8abb1d8a570081045f5f6cbf_raw.jpg\n" +
+            "eefd0c748752667162bb052e9905e1bf66b6eb31_raw.jpg\n" +
+            "ef2e36a1bbeb1a0f18f982f6e8e307f2ca3cfffc_raw.jpg\n" +
+            "ef976842baaf568abdb1e1cde3d348fabdf8c9fb_raw.jpg\n" +
+            "efc5af5324b346762e11c3875ef2092c6a586ce8_raw.jpg\n" +
+            "f0872094b6c559f0f386db29090beecee5a4563f_raw.jpg\n" +
+            "f090435de7b32539aa61927efc600a410f6a63e1_raw.jpg\n" +
+            "f0f6f78d7a25f367cff0989ef92b23a627d53450_raw.jpg\n" +
+            "f1999a29579a05dfbc9a0ed0f3170e8bb3287c84_raw.jpg\n" +
+            "f1cbae19bd21be4bac15df63ec1cd4bf2d143756.jpg\n" +
+            "f1cbae19bd21be4bac15df63ec1cd4bf2d143756_raw.jpg\n" +
+            "f26681ef5ae869b589bc8dda1560789fda29cdb3_raw.jpg\n" +
+            "f34c4500b8b47792c47898b9d2714ab76d74f506.jpg\n" +
+            "f38031d2326a985f6c9ecd0deecd583de709ae56_raw.jpg\n" +
+            "f38aadb4f294080c9819447595e2110a8cf39c81_raw.jpg\n" +
+            "f3dd8ff646e061ab4eb8c72145079c933d3d808a_raw.jpg\n" +
+            "f43a886670ce50a98c3f4cd3f8fc7be5c2dea294_raw.jpg\n" +
+            "f4f942b250aeccbbd4dbaab8076537f27b86344b_raw.jpg\n" +
+            "f66076ef220d6e5ec7e057984ecbc4ed478755f7_raw.jpg\n" +
+            "f7edddfd15870370d7c5ab93955622940f91f7bd_raw.jpg\n" +
+            "f89b4bc77b7e1fe9e17bef6ba7d9828bf3772561_raw.jpg\n" +
+            "fa1cd84cb0e043815ff3be1fdec2fc6cf3edee3d_raw.jpg\n" +
+            "fac3f4590074cfb6bd50d33370cab8d87ebcbe85_raw.jpg\n" +
+            "fadf43b60f10c2d27a62636bcec3f2a44e33c1f1_raw.jpg\n" +
+            "fb0502d8cd52559e9bbf8dc3c8e2725c331999fc_raw.jpg\n" +
+            "fbb42a898b75ddc8db77860d02046c4816cbd0c7_raw.jpg\n" +
+            "fe5439820dbe83983a4b81a32ebc87a389a7a051_raw.jpg\n" +
+            "ff4eb48e652cb6975f901b0d621fa5683cf752db.jpg";
+        const arr = fileName.split("\n");
+        let initApp = function (){
+            /*let f = () => {
+                console.log(123);
+                window.localStorage.setItem("delItems",12312)
+            }
+            window.localStorage.getItem("delItems") === "" ? f() : null;
+*/
+            let imageLoad = new Promise( res => {
+                for(let i = 0,len = arr.length;i<len;i++){
+                    let image = new Image();
+                    image.src = arr[i];
+                    image.oncontextmenu = delPic;
+                    image.onload = function (){
+                        const width = this.width,height = this.height;
+                        if(height < 600 || width < 1200)return ;
+
+                        if(width < height){
+                            this.style.height = "200px";
+                        }else{
+                            return ;
+                            this.style.width = "100px";
+                        }
+                        pic.appendChild(this);
+                    }
+                }
+                res();
+
+            });
+            imageLoad.then( _ => {
+                console.log(window.localStorage.getItem("delItems"));
+                for(let i = 0;;i++){
+                    if(window.localStorage.getItem("delItems"+i) !== null){
+                        console.log(window.localStorage.getItem("delItems"+i));
+                        let target = document.querySelector("img[src=\"" +
+                            window.localStorage.getItem("delItems"+i).substring(window.localStorage.getItem("delItems"+i).lastIndexOf("/")+1) + "\"]");
+                        console.log("img[src=\"" +
+                            window.localStorage.getItem("delItems"+i).substring(window.localStorage.getItem("delItems"+i).lastIndexOf("/")+1) + "\"]");
+                        console.log(target);
+                        console.log(document.getElementsByTagName("img"));
+                        pic.removeChild(target);
+                        del.appendChild(target);
+                    }else{
+                        break;
+                    }
+                }
+            })
+
+
+        };
+        let getDelCount = function (){
+            for(var i = 0;;i++){
+                if(window.localStorage.getItem("delItems"+i) == null){
+                    break;
+                }
+            }
+            return i;
+        }
+        let delPic = function (e){
+            e.preventDefault();
+            if(confirm("del")){
+                // window.localStorage.setItem("delItems"+count,this.src);
+                this.parentNode.removeChild(this);
+                // del.appendChild(this);
+            }
+        };
+
+        let count = getDelCount();
+        alert();
+
+        initApp();
+        window.onclick = function (){
+            console.log(window.localStorage.getItem("delItems0"));
+        }
+
+    })
+    </script>
+</body>
+</html>
